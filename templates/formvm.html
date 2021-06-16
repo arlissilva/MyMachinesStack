@@ -1,0 +1,32 @@
+{{define "formvm"}}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="/style/css/resetcss.css" type="text/css" rel="stylesheet">
+    <link href="/style/css/style.css" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>MyMachinesStack</title>
+</head>
+<body>
+<div class="container-menu">Preencha os dados</div>
+<div class="container-separador"> </div>
+<div class="formconfig">
+    <form action="/exectrequest" method="post">
+        <label for="namemachine">Nome da VM</label>
+        <input type="text" id="namemachine" name="namemachine">
+        <input type="range" name="memoria" min="10gb" max="500gb">
+        <select id="sovm">
+            <option value="Windows10">Windows 10</option>
+            <option value="Windows7">Windows 7</option>
+            <option value="WindowsXP">Windows XP</option>
+            <option value="WindowsServer">Windows Server</option>
+        </select>
+        <div>
+            <button type="submit">Criar</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+{{end}}
