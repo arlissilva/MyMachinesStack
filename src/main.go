@@ -1,8 +1,8 @@
 package main
 
 import (
-	"MyMachinesStack/app"
-	"MyMachinesStack/routes"
+	"../MyMachinesStack/app"
+	"../MyMachinesStack/routes"
 	"fmt"
 )
 

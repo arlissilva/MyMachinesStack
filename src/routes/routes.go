@@ -26,6 +26,7 @@ func MyRoutes(){
 
 var tmplt = template.Must(template.ParseGlob("./templates/*html"))
 
+
 func Index(w http.ResponseWriter, r *http.Request){
 	tmplt.ExecuteTemplate(w, "index", nil)
 }
