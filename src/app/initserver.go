@@ -8,20 +8,19 @@ import (
 
 const (
 	logserver = "./log/server/logserver.log"
-	logerror = "./log/error/logerror.log"
+	logerror  = "./log/error/logerror.log"
 )
 
-
-func InitServer(){
+func InitServer() {
 	fmt.Print("Validando conexão dos Logs...\n")
 	//time.Sleep(8000*time.Millisecond)
 	errServer := validLog(logserver)
-	if errServer != nil{
+	if errServer != nil {
 		gravaLog([]byte(errServer.Error()))
 	}
 
 	errSys := validLog(logerror)
-	if errSys != nil{
+	if errSys != nil {
 		gravaLog([]byte(errSys.Error()))
 	}
 
@@ -31,27 +30,24 @@ func InitServer(){
 	//time.Sleep(8000*time.Millisecond)
 	fmt.Println("Servidor completo...")
 
-
-
 }
 
-func validLog(log string) error{
-	if _,err := os.Stat(log);
-	os.IsNotExist(err){
+func validLog(log string) error {
+	if _, err := os.Stat(log); os.IsNotExist(err) {
 		fmt.Println("File not Found")
 		return err
-	}else {
+	} else {
 		fmt.Println("Logs Online")
 		return err
 	}
 }
 
-func gravaLog(log []byte) string{
+func gravaLog(log []byte) string {
 	err := ioutil.WriteFile(logserver, log, 0644)
-	if err != nil{
-		fmt.Println("Erro na gravação do arquivo",err)
+	if err != nil {
+		fmt.Println("Erro na gravação do arquivo", err)
 		return "erro"
-	}else{
+	} else {
 		return "OK"
 	}
 
